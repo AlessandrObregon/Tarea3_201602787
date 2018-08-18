@@ -21,6 +21,10 @@ public class Tarea3_201602787 {
         Scanner entrada = new Scanner(System.in);
         
         int respuesta;
+        int n1;
+        int n2;
+        int n3;
+                
         
         System.out.println("Menu de Operaciones");
         System.out.println("1. Usuarios");
@@ -37,6 +41,32 @@ public class Tarea3_201602787 {
             case 2:
                 break;
             case 3:
+                System.out.println("Ingrese el primer número");
+                n1=entrada.nextInt();
+                System.out.println("Ingrese el segundo número");
+                n2=entrada.nextInt();
+                System.out.println("Ingrese el tercer número");
+                n3=entrada.nextInt();
+                
+               if (n1>n2 && n2>n3){
+                   
+                   System.out.println("Los Números Ordenados de Mayor a Menor son: "+n1+","+n2+","+n3);  
+               } 
+               else if(n1>n3 && n3>n2){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n1+","+n3+","+n2);  
+                }
+               else if(n2>n1 && n1>n3){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n2+","+n1+","+n3);  
+                }
+               else if(n2>n3 && n3>n1){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n2+","+n3+","+n1);  
+                }
+               else if(n3>n1 && n1>n2){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n3+","+n1+","+n2);  
+                }
+               else if(n3>n2 && n2>n1){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n3+","+n2+","+n1);  
+                }
                 break;
             case 4:
                 break;
