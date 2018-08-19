@@ -31,7 +31,7 @@ public class Usuarios {
     }
     
     //Para Que Aparezca El Menu Principal Nuevamente.
-    public void InicializarUsuarios(){
+    public void InicioUsuarios(){
     try{
         Menu menu = new Menu();
         Scanner lector = new Scanner(System.in);
@@ -69,7 +69,7 @@ public class Usuarios {
         }catch(Exception e){
             SaltoLinea();
             System.out.println("\033[31mSolo se permite el ingreso de numeros");
-            InicializarUsuarios();
+            InicioUsuarios();
         }
     }
     

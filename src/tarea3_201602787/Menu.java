@@ -25,7 +25,7 @@ public class Menu {
     //La idea o recomendacion del try fue dada en la clase 4 del laboratorio IPC1.
         try{
         Scanner entrada = new Scanner(System.in);
-        int opcion;
+        int opciones;
         do {
             System.out.println("******MENU PRINCIPAL******\n");
             System.out.println("\033[32m1. Usuarios.");
@@ -33,13 +33,13 @@ public class Menu {
             System.out.println("\033[32m3. Tres números de mayor a menor.");
             System.out.println("\033[321m4. Calcular promedio.");
             System.out.println("\033[321m5. Salir.");
-            System.out.print("\033[36m-Seleccione una Opcion: ");
-            opcion = entrada.nextInt();
+            System.out.print("\033[31m-Seleccione una Opcion: ");
+            opciones = entrada.nextInt();
             //El Switch es para el reconocimiento de la opcion ingresada por el usuario y responder a lo indicado debajo
-            switch (opcion) {                
+            switch (opciones) {                
                 case 1:
                     SaltoLinea();
-                    usuario.InicializarUsuarios();
+                    usuario.InicioUsuarios();
                     break;
                 case 2:
                     
@@ -61,7 +61,7 @@ public class Menu {
             }
         //Si el usuario ingresa el numero 5 por ser la opcion "salir" el programa se cerrara`
         
-        } while (opcion != 5);
+        } while (opciones != 5);
         }catch(Exception e){
             SaltoLinea();
             System.out.println("\033[31mDato erroneo, solo se permite el ingreso de numeros. ");

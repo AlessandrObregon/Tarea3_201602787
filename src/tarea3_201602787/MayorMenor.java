@@ -19,21 +19,44 @@ public class MayorMenor {
     public void TresNumeros(){
         try{
         Menu menu = new Menu();
-        Scanner lector = new Scanner(System.in);
-        int opcion;
+        Scanner entrada = new Scanner(System.in);
+         int respuesta = 0;
         do {
-            System.out.println("\033[36m1. Ingresar numeros");
-            System.out.println("\033[36m2. Mostrar ordenados");
-            System.out.println("\033[36m3. Menu principal");
-            System.out.print("\033[32m-Seleccione una Opcion: ");
-            opcion = lector.nextInt();
-            switch (opcion) {                
+            System.out.println("\033[36m1. Ingresar números");
+            System.out.println("\033[36m2. Mostrar Números ordenados");
+            System.out.println("\033[36m3. Menú principal");
+            System.out.print("\033[31m-Seleccione una Opcion: ");
+            respuesta=entrada.nextInt();
+            switch (respuesta) {                
                 case 1:
-                    
+                    System.out.println("Ingrese el primer número:");
+                n1=entrada.nextInt();
+                System.out.println("Ingrese el segundo número:");
+                n2=entrada.nextInt();
+                System.out.println("Ingrese el tercer número:");
+                n3=entrada.nextInt();
                     
                     break;
                 case 2:
-                    
+                      if (n1>n2 && n2>n3){
+                   
+                   System.out.println("Los Números Ordenados de Mayor a Menor son: "+n1+","+n2+","+n3);  
+               } 
+               else if(n1>n3 && n3>n2){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n1+","+n3+","+n2);  
+                }
+               else if(n2>n1 && n1>n3){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n2+","+n1+","+n3);  
+                }
+               else if(n2>n3 && n3>n1){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n2+","+n3+","+n1);  
+                }
+               else if(n3>n1 && n1>n2){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n3+","+n1+","+n2);  
+                }
+               else if(n3>n2 && n2>n1){
+                    System.out.println("Los Números Ordenados de Mayor a Menor son: "+n3+","+n2+","+n1);  
+                }
                     
                     break;
                 case 3:
@@ -44,7 +67,7 @@ public class MayorMenor {
                     
                     System.out.println("OPCION NO VALIDA");      
             }
-        } while (opcion!=3);
+        } while (respuesta!=3);
         }catch(Exception e){
             
             System.out.println("\033[31mSolo se permite el ingreso de numeros");
