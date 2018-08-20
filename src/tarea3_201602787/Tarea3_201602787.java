@@ -16,8 +16,8 @@ public class Tarea3_201602787 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.MenuPrincipal();
+        Menu menu = new Menu(); //Llamo la clase menu  y creo un objeto al cual llamar
+        menu.MenuPrincipal(); //con el objeto llamo el metodo que contiene mi menu general
     }
 }
 

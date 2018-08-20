@@ -5,7 +5,7 @@
  */
 package tarea3_201602787;
 
-import java.util.Scanner;
+import java.util.Scanner; //Importación de la clase Scanner para leer datos del teclado
 /**
  *
  * @author oliver Obregon
@@ -17,58 +17,57 @@ public class Usuarios {
     public String VectorUsuarios [] = new String [5];
     
     
-    //Genera saltos de linea para limpiar la pantalla
-    public void SaltoLinea(){
-        for (int i = 0; i < 35; i++) {
-            System.out.println("");
-        }
-    }
     
     public void SaltoLineaPequeño(){
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 5; i++) {
             System.out.println("");
         }
     }
     
-    //Para Que Aparezca El Menu Principal Nuevamente.
+   
     public void InicioUsuarios(){
+        //Se genera un try para evitar errores al ingresar letras en lugar de numeros.
+        //La idea o recomendacion del try fue dada en la clase 4 del laboratorio IPC1.
     try{
         Menu menu = new Menu();
         Scanner lector = new Scanner(System.in);
         int opcion;
+        // ejemplo de referencia y guia de como regresar al menu principal con un DO WHILE
+        //https://www.youtube.com/watch?v=mzAHMVctGtA&t=281s
         do {
             System.out.println("\033[32m1. Ingresar Los Usuarios");
             System.out.println("\033[32m2. Mostrar Los Usuarios Ascendente");
             System.out.println("\033[32m3. Mostrar Los Usuarios Descendente");
+             //Para Que Aparezca El Menu Principal Nuevamente.
             System.out.println("\033[32m4. Menu principal");
-            System.out.print("\033[36m-Seleccione una Opcion: ");
+            System.out.print("\033[31mSeleccione una Opcion: ");
             opcion = lector.nextInt();
             switch (opcion) {
                 case 1:
-                    SaltoLinea();
+                    
                     IngresoUsuarios();
                     break;
                 case 2:
-                    SaltoLinea();
+                    
                     UsuariosAscendente();
                     break;
                 case 3:
-                    SaltoLinea();
+                    
                     UsuariosDescendentes();
                     break;
                 case 4:
-                    SaltoLinea();
+                    //Para Que Aparezca El Menu Principal Nuevamente.
                     menu.MenuPrincipal();
                     break;
                 default:
-                    SaltoLinea();
-                    System.out.println("OPCION NO VALIDA");                            
+                    
+                    System.out.println("¡¡¡OPCION NO VALIDA!!! Intente nuevamente...");                            
             }
         } while (opcion!=4);
         //Excepcion que muestra un mensaje de error al ingresar letras
         }catch(Exception e){
-            SaltoLinea();
-            System.out.println("\033[31mSolo se permite el ingreso de numeros");
+            
+            System.out.println("\033[31mDato erroneo, solo se permite el ingreso de numeros.");
             InicioUsuarios();
         }
     }
@@ -82,10 +81,10 @@ public class Usuarios {
             nombre = Ingreso.nextLine();
             VectorUsuarios[i] = nombre;
         }
-        SaltoLinea();
+        
     }
     
-    //Se muestra el vector en orden Ascendente
+    //Muestra el vector en orden Ascendente
     public void UsuariosAscendente(){
         System.out.println("Los usuarios en orden ascendente son:");
         System.out.println(VectorUsuarios[4]);
